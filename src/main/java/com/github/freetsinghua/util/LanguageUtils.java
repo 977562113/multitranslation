@@ -67,7 +67,7 @@ public final class LanguageUtils {
         System.out.println(translate);
     }
 
-    private static String translate(String content) {
+    public static String translate(String content) {
         Translations translations =  new Translations(new Random().nextBoolean() ? new BaiduTranslator() : new GoogleTranslator());
         return translations.traslate("英语", "简体中文", content);
     }
