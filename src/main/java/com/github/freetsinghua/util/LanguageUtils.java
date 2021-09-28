@@ -1,5 +1,7 @@
 package com.github.freetsinghua.util;
 
+import com.github.freetsinghua.Translations;
+import com.github.freetsinghua.core.impl.*;
 import com.github.freetsinghua.core.io.ClassPathResource;
 import org.apache.commons.io.FileUtils;
 import org.dom4j.*;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Random;
 
 /** @ClassName @Description @Author z.tsinghua @Date 2018/9/12 */
 public final class LanguageUtils {
@@ -57,5 +60,15 @@ public final class LanguageUtils {
      */
     public static String getLanguageShort(String language) {
         return SHORT_LANGUAGE_MAP.get(language);
+    }
+
+    public static void main(String[] args) {
+        String translate = translate("Gothenburg explosion: 25 in hospital after blast at block of flats in Sweden ");
+        System.out.println(translate);
+    }
+
+    private static String translate(String content) {
+        Translations translations =  new Translations(new Random().nextBoolean() ? new BaiduTranslator() : new GoogleTranslator());
+        return translations.traslate("英语", "简体中文", content);
     }
 }

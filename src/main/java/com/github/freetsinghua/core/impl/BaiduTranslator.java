@@ -6,7 +6,6 @@ import com.github.freetsinghua.core.io.ClassPathResource;
 import com.github.freetsinghua.core.io.util.StringUtils;
 import com.github.freetsinghua.util.CollectionUtils;
 import com.github.freetsinghua.util.LanguageUtils;
-import com.sun.javafx.sg.prism.web.NGWebView;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -94,7 +93,7 @@ public final class BaiduTranslator extends AbstractTranslator {
      */
     @Override
     public String parses(String text) throws IOException, IllegalStateException {
-        System.out.println(text);
+//        System.out.println(text);
 
         if (StringUtils.isEmpty(text)) {
             throw new IllegalStateException("the result is empty!!");
@@ -129,7 +128,7 @@ public final class BaiduTranslator extends AbstractTranslator {
             e.printStackTrace();
         }
 
-        System.out.println("token = " + result);
+//        System.out.println("token = " + result);
 
         return result;
     }

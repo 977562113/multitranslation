@@ -81,7 +81,7 @@ public final class GoogleTranslator extends AbstractTranslator {
             }
         }
 
-        System.out.println(uri.toString());
+//        System.out.println(uri.toString());
 
         HttpUriRequest request = new HttpGet(uri.toString());
         request.setHeader("authority", "translate.google.cn");
